@@ -1,6 +1,10 @@
 server:
   port: 30002
-  
+
+spring:
+  application:
+    name: hyt-zuul
+
 zuul:
   okhttp:
     enabled: true
@@ -37,5 +41,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:30000/eureka/
-    
+
 debug: true
