@@ -37,3 +37,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:30000/eureka/
+    
+debug: true
