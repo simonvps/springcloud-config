@@ -1,1 +1,27 @@
-1111111
+server:
+  port: 30000
+spring:
+  application:
+    name: hyt-eureka
+  freemarker:
+    prefer-file-system-access: false   # 是否优先从文件系统加载template，以支持热加载，默认为true
+    template-loader-path: ["classpath:/templates/"]
+
+eureka:
+  instance:
+    #hostname: 47.104.78.94
+    hostname: localhost
+    status-page-url: https://${eureka.hostname}/info     # 状态页面 url
+    health-check-url: https://${eureka.hostname}/health    #  健康检查页 url
+    home-page-url: https://${eureka.hostname}/    # 实例主页 url
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 50000
+
+debug: true
+
