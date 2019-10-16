@@ -1,0 +1,34 @@
+server:
+  port: 30002
+  
+zuul:
+  okhttp:
+    enabled: true
+  semaphore:
+    max-semaphores: 500
+  host:
+    socket-timeout-millis: 50000
+    connect-timeout-millis: 50000
+    max-total-connections: 5000
+    max-per-route-connections: 5
+  routes:
+    hxb-service:
+      path: /hxb/**
+      serviceId: client-hxb
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+          strategy: THREAD
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  MaxTotalHttpConnections: 2000
+  MaxConnectionsPerHost: 1000
