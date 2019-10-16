@@ -32,3 +32,8 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   MaxTotalHttpConnections: 2000
   MaxConnectionsPerHost: 1000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30000/eureka/
