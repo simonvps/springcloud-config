@@ -60,7 +60,7 @@ eureka:
 
 mybatis:
   mapper-locations: classpath:com/netflix/mybatis/mapper/*.xml
-  type-aliases-package: com.netflix.model
+#  type-aliases-package: com.netflix.model
   configuration:
     use-generated-keys: true
     use-column-label: true
